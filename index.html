@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Coffee Shop</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D8CCA3;
+        }
+
+        .navbar {
+            background-color: transparent; /* Coffee-themed color */
+        }
+
+        
+        .navbar-brand img {
+            width: 200px; /* Adjust the size of the logo */
+            height: auto;
+        }
+
+        .navbar-nav {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            font-family: 'Times New Roman';
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            color: black !important;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding-bottom: 6px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: black; /* Lighter color on hover */
+            border-bottom: 2px solid black; /* Line hover effect */
+        }
+
+        .hero-section {
+            background: url('hero-image.jpg') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: black;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman';
+        }
+
+        .menu-section {
+            padding: 50px 0;
+            background-color: #B09B71;
+            text-align: center;
+            font-family: 'Times New Roman';
+        }
+
+        .menu-card {
+            width: 300px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .menu-card-body {
+            padding: 20px;
+            background-color: #E0D8B0;
+        }
+
+        .menu-card-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .menu-card-description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .menu-card-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #795548;
+        }
+
+        .menu-card:hover {
+            transform: scale(1.05);
+        }
+
+        .about-us-section {
+            background-color: #D8CCA3;
+            padding: 50px 0;
+            text-align: center;
+            color: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .contact-us-section {
+            background-color: #B09B71;
+            padding: 50px 0;
+            text-align: center;
+            color: black;
+            font-family: 'Times New Roman';
+        }
+
+        footer {
+            background-color: #D8CCA3; /* Dark background color */
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Times New Roman';
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: #ccc; /* Lighter color on hover */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Coffee Shop Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link home-menu" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#aboutus">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Specials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="order.html">Order Now</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <h1>Welcome to Our Coffee Shop</h1>
+        <p>Discover the finest coffee blends and delightful treats.</p>
+    </div>
+<section id="menu">
+    <div class="menu-section">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="cap.png" alt="Cappuccino">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Cappuccino</h3>
+                            <p class="menu-card-description">A classic coffee drink with espresso and steamed milk foam.</p>
+                            <p class="menu-card-price">$3.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="latte.png" alt="Latte">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Latte</h3>
+                            <p class="menu-card-description">Espresso with a steamed milk and a small amount of foam.</p>
+                            <p class="menu-card-price">$4.49</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="esp.jpg" alt="Espresso">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Espresso</h3>
+                            <p class="menu-card-description">Freshly brewed high quality espresso beans.</p>
+                            <p class="menu-card-price">$2.50</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <!-- Add more menu cards as needed -->
+                </div>
+                <div class="col-md-4">
+                    <!-- Add more menu cards as needed -->
+                </div>
+                <div class="col-md-4">
+                    <!-- Add more menu cards as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="aboutus">
+    <div class="about-us-section" >
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to "Cafe Coast" – your cozy escape in the heart of Toronto. Step into a warm atmosphere, where the aroma of freshly ground beans and the hum of friendly chatter invite you to unwind.</p>
+
+            <p>Our baristas are dedicated to crafting the perfect cup for you. Whether you're a coffee aficionado or just looking for a quick pick-me-up, we've got you covered. Choose from our selection of carefully curated coffees, each brewed to perfection.</p>
+                
+            <p>At Brew Haven, we believe in quality and sustainability. Our beans are ethically sourced, ensuring every sip supports responsible practices. Pair your favorite brew with a delightful selection of pastries and snacks.</p>
+                
+            <p> Take a seat, catch up with friends, or simply enjoy a moment of tranquility. Brew Haven is more than a coffee shop; it's a haven for good coffee and great company. Join us for a sip, and make Brew Haven your home away from home.</p>
+        </div>
+    
+    </div>
+</section>
+<section id="Contact">
+    <div class="contact-us-section" >
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: info@cafecoast.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: 123 Coffee Street, Cityville</p>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>&copy; 2024 Your Coffee Shop</p>
+        <div class="social-icons">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

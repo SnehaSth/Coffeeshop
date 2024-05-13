@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D8CCA3;
+        }
+
+        .navbar {
+            background-color: transparent; /* Coffee-themed color */
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-brand img {
+            width: 200px; /* Adjust the size of the logo */
+            height: auto;
+        }
+
+        .navbar-nav {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            font-family: 'Times New Roman';
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            color: black !important;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding-bottom: 6px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: black; /* Lighter color on hover */
+            border-bottom: 2px solid black; /* Line hover effect */
+        }
+
+        .login-container {
+            background-color: #EDDFB3;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 500px;
+            text-align: center;
+            transform: translateY(0);
+            animation: fadeInUp 0.8s ease-out;
+            margin: 50px auto; /* Center the container horizontally */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the content vertically */
+            font-family: 'Times New Roman';
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container h2 {
+            color: #8d6e63;
+            margin-bottom: 20px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #6d4c41;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #a1887f;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #795548;
+        }
+
+        .login-btn {
+            background-color: #795548;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+
+        .login-btn:hover {
+            background-color: #5d4037;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            color: #795548;
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 14px;
+            display: block;
+        }
+
+        footer {
+            background-color: transparent; /* Coffee-themed color */
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            width: 100%;
+            font-family: 'Times New Roman';
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: black; /* Lighter color on hover */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Coffee Shop Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link home-menu" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Specials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="login-container">
+        <h2>Coffee Shop Login</h2>
+        <form action="" method="">
+            <div class="input-group">
+                <label for="username">Email:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <a href="order.html"><button type="submit" class="login-btn" onclick="redirectToOrder()" >Login</button></a>
+        </form>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        <div class="login-option">
+            <p>Don't have an account? <a href="signup.html">signup</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Coffee Shop</p>
+        <div class="social-icons">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        function redirectToOrder() {
+            // Redirect the user to the order page after successful signup or login
+            window.location.href = "order.html";
+        }
+    </script>
+    
+</body>
+</html>

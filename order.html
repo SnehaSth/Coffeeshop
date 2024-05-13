@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Coffee Shop - Menu</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CSS (for cart icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.html">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #D8CCA3;
+            font-family: 'Times New Roman';
+        }
+
+        .navbar {
+            background-color: transparent; /* Coffee-themed color */
+        }
+
+        .navbar-brand img {
+            width: 200px; /* Adjust the size of the logo */
+            height: auto;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-nav {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            color: black !important;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding-bottom: 6px;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: black; /* Lighter color on hover */
+            border-bottom: 2px solid black; /* Line hover effect */
+        }
+
+        .cart-icon {
+            font-size: 24px;
+            margin-left: 10px;
+            color: black;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            color: #795548; /* Change color on hover */
+        }
+
+        .menu-section {
+            padding: 50px 0;
+            background-color: #B09B71;
+            text-align: center;
+            color: black;
+        }
+
+        .menu-card {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .menu-card-body {
+            padding: 20px;
+            background-color: #E0D8B0;
+        }
+
+        .menu-card-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .menu-card-description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .menu-card-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #795548;
+        }
+
+        .menu-card button {
+            background-color: #795548;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-card button:hover {
+            background-color: #5d4037;
+        }
+
+        footer {
+            background-color: #D8CCA3; /* Dark background color */
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: black;
+            text-decoration: none;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: #ccc; /* Lighter color on hover */
+        }
+
+        .cart-item-image {
+            max-width: 100px; /* Set the maximum width of the image */
+            max-height: 100px; /* Set the maximum height of the image */
+        }
+
+        #cartModal .modal-body {
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        #cartModal .modal-footer {
+            justify-content: space-between;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .cart-item-price {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .cart-total {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="Coffee Shop Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Specials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Sign Out</a>
+                </li>
+                <li class="nav-item">
+                    <i class="fas fa-shopping-cart cart-icon" onclick="showCart()"></i>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="menu-section">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="cap.png" alt="Cappuccino">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Cappuccino</h3>
+                            <p class="menu-card-description">A classic coffee drink with espresso and steamed milk foam.</p>
+                            <p class="menu-card-price">$3.99</p>
+                            <button onclick="addToCart('Cappuccino', 3.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="latte.png" alt="Latte">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Latte</h3>
+                            <p class="menu-card-description">Espresso with a steamed milk and a small amount of foam.</p>
+                            <p class="menu-card-price">$4.49</p>
+                            <button onclick="addToCart('Latte', 4.49)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="menu-card">
+                        <img src="esp.jpg" alt="Espresso">
+                        <div class="menu-card-body">
+                            <h3 class="menu-card-title">Espresso</h3>
+                            <p class="menu-card-description">Freshly brewed high quality espresso beans.</p>
+                            <p class="menu-card-price">$2.50</p>
+                            <button onclick="addToCart('Espresso', 2.50)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Coffee Shop</p>
+        <div class="social-icons">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome JS (for cart icon) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script>
+        let cartItems = [];
+
+        function addToCart(item, price) {
+            cartItems.push({ item: item, price: price });
+            alert('Item added to cart: ' + item);
+        }
+
+        function removeFromCart(button) {
+            let itemIndex = button.parentElement.parentElement.dataset.index;
+            cartItems.splice(itemIndex, 1);
+            renderCart();
+        }
+
+        function showCart() {
+            $('#cartModal').modal('show');
+            renderCart();
+        }
+
+        function renderCart() {
+            let cartList = document.getElementById('cartList');
+            let total = 0;
+            cartList.innerHTML = '';
+            cartItems.forEach((item, index) => {
+                total += parseFloat(item.price);
+                let cartItemDiv = document.createElement('div');
+                cartItemDiv.classList.add('cart-item');
+                cartItemDiv.dataset.index = index;
+                cartItemDiv.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-details col-8">
+                            <span>${item.item}</span>
+                            <p class="cart-item-price">$${item.price}</p>
+                            <button class="btn btn-danger btn-sm" onclick="removeFromCart(this)">Remove</button>
+                        </div>
+                    </div>
+                `;
+                cartList.appendChild(cartItemDiv);
+            });
+            document.getElementById('totalPrice').textContent = `$${total.toFixed(2)}`;
+        }
+    </script>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Shopping Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="cartList">
+                    <!-- Cart items will be rendered here -->
+                </div>
+                <div class="modal-footer">
+                    <span>Total: <span id="totalPrice">$0.00</span></span>
+                    <button type="button" class="btn btn-primary">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
